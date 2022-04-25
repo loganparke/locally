@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS yelp_db;
+
+CREATE DATABASE yelp_db;
