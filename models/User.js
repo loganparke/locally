@@ -20,7 +20,7 @@ User.init(
       allowNull: false,
       unique: true
     },
-    passord: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false
     },

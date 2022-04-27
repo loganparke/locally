@@ -5,7 +5,7 @@ const Catagory = require('./Catagory')
 
 // add relationships between tables
 User.hasMany(Review, {
-  foreignKey: 'user-id'
+  foreignKey: 'user_id'
 });
 
 Review.belongsTo(User, {

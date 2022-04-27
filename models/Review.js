@@ -44,3 +44,5 @@ Review.init(
     modelName: 'review'
   }
 );
+
+module.exports = Review;
