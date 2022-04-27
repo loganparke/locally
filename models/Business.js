@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Business extends Model {}
@@ -12,10 +12,11 @@ Business.init(
       autoIncrement: true
     },
     business_name: {
-
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     catagory_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Catagory',
@@ -23,19 +24,24 @@ Business.init(
       }
     },
     website: {
-
+      type: DataTypes.STRING,
+      allowNull: false
     },
     phone: {
-
+      type: DataTypes.STRING,
+      allowNull: false
     },
     address: {
-
+      type: DataTypes.STRING,
+      allowNull: false
     },
     mainPhoto: {
-
+      type: DataTypes.STRING,
+      allowNull: false
     },
     hours: {
-
+      type: Sequelize.json,
+      allowNull: false
     }
   },
   {

@@ -11,7 +11,7 @@ Review.init(
       primaryKey: true,
       autoIncrement: true
     },
-    comment_text: {
+    review_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
