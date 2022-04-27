@@ -1,5 +1,5 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes, Sequelize } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Business extends Model {}
 
@@ -9,48 +9,48 @@ Business.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     business_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
-    catagory_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'catagory',
-        key: 'id'
-      }
+        model: "category",
+        key: "id",
+      },
     },
     website: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     phone: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     address: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     mainPhoto: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     hours: {
       type: DataTypes.JSON,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'business'
+    modelName: "business",
   }
-)
+);
 
 module.exports = Business;
