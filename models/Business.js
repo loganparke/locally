@@ -12,14 +12,14 @@ Business.init(
       autoIncrement: true
     },
     business_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     catagory_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Catagory',
+        model: 'catagory',
         key: 'id'
       }
     },
@@ -40,7 +40,7 @@ Business.init(
       allowNull: false
     },
     hours: {
-      type: Sequelize.json,
+      type: DataTypes.JSON,
       allowNull: false
     }
   },
@@ -52,3 +52,5 @@ Business.init(
     modelName: 'business'
   }
 )
+
+module.exports = Business;
