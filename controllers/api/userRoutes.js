@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const { Business, Review, User } = require('../../models');
+const router = require("express").Router();
+const { Business, Review, User, Catagory } = require("../../models");
 
 router.get('/', (req, res) => {
   User.findAll({
