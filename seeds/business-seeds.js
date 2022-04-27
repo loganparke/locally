@@ -54,7 +54,7 @@ const businessData = [
     }
   }
 ];
-
+// test for branch push
 const seedBusinesses = () => Business.bulkCreate(businessData, {individualHooks: true});
 
 module.exports = seedBusinesses;
