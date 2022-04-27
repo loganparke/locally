@@ -11,7 +11,7 @@ Catagory.init(
       primaryKey: true,
       autoIncrement: true
     },
-    business_type: {
+    catagory_name: {
       type: DataTypes.STRING,
       allowNull: false,
     }
