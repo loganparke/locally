@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'review_text', 'stars'],
         include: {
           model: Business,
-          attributes: ['business_name']
+          attributes: ['business_name', 'id']
         }
       }
     ]

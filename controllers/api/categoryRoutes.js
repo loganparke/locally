@@ -2,12 +2,7 @@ const router = require("express").Router();
 const { User, Business, Review, Category } = require("../../models");
 
 router.get("/", (req, res) => {
-  Category.findAll({
-    include: {
-      model: Business,
-      attributes: ["id", "business_name", "website", "phone", "address"],
-    },
-  })
+  Category.findAll()
     .then((dbCategoryData) => {
       if (!dbCategoryData) {
         res.status(404).json({ message: "No categories found" });
