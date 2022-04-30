@@ -6,10 +6,7 @@ router.get('/', (req,res) => {
   Category.findAll()
     .then(dbCategoryData => {
       const categories = dbCategoryData.map(category => category.get({ plain: true }))
-      if (!dbCategoryData) {
-        res.status(404).json({ message: "No categories found" });
-        return;
-      }
+
       res.render('homepage', {
         categories
       });
@@ -19,5 +16,9 @@ router.get('/', (req,res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/login', (req, res) => {
+  res.render('login');
+})
 
 module.exports = router;

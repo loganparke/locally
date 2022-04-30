@@ -41,7 +41,7 @@ Business.init(
     },
     hours: {
       type: DataTypes.JSON,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

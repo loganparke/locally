@@ -1,4 +1,14 @@
 
 {{> header}}
 {{> business}}
-<p>this is the business page</p>
+<div class="pb-10">
+  <p class="text-center underline text-xl">Reviews</p>
+  {{#each reviews}}
+  <div class="w-full flex flex-wrap border-b m-5 px-5">
+    <h1 class="w-full">Review from <strong id="{{user.id}}">{{user.username}}</strong>:</h1>
+    <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{stars}} Stars</p>
+    <p class="text-black">{{review_text}}</p>
+    
+  </div>
+  {{/each}}
+</div>
