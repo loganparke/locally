@@ -1,14 +1,19 @@
-const router = require('express').Router();
-const { User, Business, Category, Review } = require('../models');
+const router = require("express").Router();
+const { User, Business, Category, Review } = require("../models");
 
-router.get('/', (req,res) => {
-  console.log('======================');
+router.get("/", (req, res) => {
+  console.log("======================");
   Category.findAll()
-    .then(dbCategoryData => {
-      const categories = dbCategoryData.map(category => category.get({ plain: true }))
-
-      res.render('homepage', {
-        categories
+    .then((dbCategoryData) => {
+      const categories = dbCategoryData.map((category) =>
+        category.get({ plain: true })
+      );
+      if (!dbCategoryData) {
+        res.status(404).json({ message: "No categories found" });
+        return;
+      }
+      res.render("homepage", {
+        categories,
       });
     })
     .catch((err) => {
@@ -17,8 +22,13 @@ router.get('/', (req,res) => {
     });
 });
 
-router.get('/login', (req, res) => {
-  res.render('login');
-})
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
+});
 
 module.exports = router;
