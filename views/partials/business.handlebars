@@ -1,13 +1,15 @@
-<div class="m-5 border-b-2 pb-5">
-  <div class="flex">
-    <div class="w-4/6">
-      <img src="{{ business.mainPhoto}}" alt="Toyko Station">
+<div class="m-4 sm:m-5 sborder-b-2 sm:pb-5 relative">
+  <div class="flex sm:flex-row flex-col">
+    <div class="sm:w-1/2 w-full">
+      <img src="{{ business.mainPhoto}}" alt="Toyko Station" class="rounded w-full">
     </div>
-    <div class="px-2 w-2/6 text-center break-all flex flex-col justify-around">
-      <h4>{{ business.business_name}}</h4>
-      <p>{{ business.phone }}</p>
-      <p>{{ business.address }}</p>
-      <a href="{{ business.website}}" class="underline text-cyan-600">{{ business.website}}</a>
+    <div class="sm:px-2 sm:w-2/6 sm:text-center sm:break-all sm:flex flex-col justify-around">
+      <h4 id='main-name' class="z-10 absolute sm:relative sm:text-black top-16 sm:top-4 left-0 right-0 text-white text-center font-bold text-4xl">{{ business.business_name}}</h4>
+      <p>Phone Number: {{ business.phone }}</p>
+      <p>Address: {{ business.address }}</p>
+      <p>Website: 
+        <a href="{{ business.website}}" class="underline text-cyan-600">{{ business.website}}</a>
+      </p>
     </div>
   </div>
 </div>

@@ -3,13 +3,13 @@ const { Category } = require("../models");
 
 const categoryData = [
   {
-    category_name: "restaurant",
+    category_name: "restaurants",
   },
   {
-    category_name: "landscaping",
+    category_name: "landscapers",
   },
   {
-    category_name: "plumber",
+    category_name: "plumbers",
   },
 ];
 
