@@ -5,7 +5,9 @@ const exphbs = require("express-handlebars");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection");
+
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 const sess = {
   secret: "Super secret secret",
   cookie: {},
@@ -15,6 +17,7 @@ const sess = {
     db: sequelize,
   }),
 };
+
 app.use(session(sess));
 const helpers = require("./utils/helpers");
 const { truncate } = require("./models/User");
