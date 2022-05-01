@@ -21,8 +21,26 @@ const businessData = [
     },
   },
   {
+    business_name: "Rodizio Grill Brazilian Steakhouse",
+    category_id: 1,
+    website: "https://www.rodiziogrill.com/salt-lake-city/",
+    phone: "(801) 220-0500",
+    address: "600 700 E 2nd Floor, Salt Lake City, UT 84102",
+    mainPhoto:
+      "https://images.squarespace-cdn.com/content/v1/57213e56e32140b848e23201/1503072697385-F5U3F1HMQRU89ZO27FCB/16-RDG-006+3A8A29343%28FIX%29%400%2C25x.jpg",
+    hours: {
+      monday: "9AM-5PM",
+      tuesday: "9AM-5PM",
+      wednesday: "9AM-5PM",
+      thursday: "9AM-5PM",
+      friday: "9AM-5PM",
+      saturday: "9AM-5PM",
+      sunday: "closed",
+    },
+  },
+  {
     business_name: "SLC Scapes",
-    category_id: 2,
+    category_id: 3,
     website: "http://www.slcscapes.com",
     phone: "801-919-9438",
     address: "Draper, UT 84020",
@@ -40,7 +58,7 @@ const businessData = [
   },
   {
     business_name: "Mr. Rooter Plumbing of Salt Lake City",
-    category_id: 3,
+    category_id: 2,
     website: "http://mrrooter.com",
     phone: "385-275-0036",
     address: "112 W 13775 S Ste 4 Draper, UT 84020",

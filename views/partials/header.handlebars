@@ -4,6 +4,7 @@
 >
   {{! style="background-image: url('/public/img/restaurant-kitchen-menu-food-server.jpg'); }}
 
+<<<<<<< HEAD
   <nav class="my-6 flex justify-between w-full">
     <div>
       hi
@@ -20,6 +21,24 @@
         class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded"
       >
         login/sign up
+=======
+    <nav class='my-6 flex justify-between w-full'>
+      <div>
+        hi
+      </div>
+      <div>
+        <button id="logout" class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">logout</button>
+        <a href="/login" class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">login/sign up</a>
+      </div>
+    </nav>
+
+    <a href='/' id='main-header' class="text-9xl font-serif font-semibold text-white pt-5 pb-12">Locally</a>
+
+    <div class="category-list w-full flex justify-around font-medium text-white">
+      {{#each categories as |catagory|}}
+      <a href='/category/{{ id }}'id={{ id }} class=" uppercase w-52 m-5 p-2 text-center border border-4 rounded border-solid border-white hover:bg-white hover:text-black ">
+        {{ category_name }}
+>>>>>>> main
       </a>
     </div>
   </nav>
