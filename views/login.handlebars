@@ -1,32 +1,94 @@
-<form class="login-form">
+<form class="login-form container mx-auto px-20 pt-20">
   <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
+    <label class="block" for="email-login">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-1"
+      >
+        Email
+      </span>
+      <input
+        type="email"
+        name="email"
+        class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md sm:text-sm focus:ring-1"
+        placeholder="you@example.com"
+        id="email-login"
+      />
+    </label>
+  </div>
+  <div class="block">
+    <label for="password-login">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-1"
+      >
+        Password:
+      </span>
+    </label>
+    <input
+      type="password"
+      id="password-login"
+      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md sm:text-sm focus:ring-1"
+      placeholder="Enter your password"
+    />
   </div>
   <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
+    <button
+      type="submit"
+      class="bg-blue-500 hover: bg-blue-400 text-white fond-bold py-2 px-4 rounded mt-5"
+    >Login</button>
   </div>
 </form>
 
-<form class="signup-form">
+<form class="signup-form container mx-auto px-20">
   <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
+    <label for="username-signup">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-1"
+      >
+        User Name:
+      </span>
+    </label>
+    <input
+      type="text"
+      id="username-signup"
+      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md sm:text-sm focus:ring-1"
+      placeholder="Enter your user name"
+    />
   </div>
   <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
+    <label for="email-signup">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-1"
+      >
+        Email:
+      </span>
+    </label>
+    <input
+      type="text"
+      id="email-signup"
+      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md sm:text-sm focus:ring-1"
+      placeholder="you@example.com"
+    />
   </div>
   <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
+    <label for="password-signup">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-1"
+      >
+        Password:
+      </span>
+    </label>
+    <input
+      type="password"
+      id="password-signup"
+      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md sm:text-sm focus:ring-1"
+      placeholder="Enter your password"
+    />
   </div>
   <div>
-    <button type="submit">signup</button>
+    <button
+      type="submit"
+      class="bg-blue-500 hover: bg-blue-400 text-white fond-bold py-2 px-4 rounded mt-5"
+    >Signup</button>
   </div>
 </form>
 

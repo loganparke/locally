@@ -4,7 +4,7 @@ const homeRoutes = require("./home-routes.js");
 const categoryRoutes = require("./category-routes");
 
 router.use("/", homeRoutes);
-// router.use("/user", userRoutes);
+router.use("/user", userRoutes);
 router.use("/category", categoryRoutes);
 router.use("/api", apiRoutes);
 
