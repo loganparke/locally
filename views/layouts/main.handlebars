@@ -1,25 +1,33 @@
-<!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Locally</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style/style.css">
-</head>
+    <title>Locally</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
 
 <body>
   <div class="wrapper h-full font-mono">
 
-    {{{ body }}}
+      {{{body}}}
 
-  <footer class="fixed py-1 mt-10 md:bottom-0 w-full text-white bg-black text-center">
-    Thanks for visiting! - this website is brought to you by Luke Sturgill, Logan Parke, and Nancy Wang
-  </footer>
-  </div>
-</body>
+      <footer
+        class="fixed py-1 mt-10 bottom-0 w-full text-white bg-black text-center"
+      >
+        Thanks for visiting! - this website is brought to you by Luke Sturgill,
+        Logan Parke, and Nancy Wang
+      </footer>
+    </div>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js">  </script>
+    {{/if}}
+  </body>
+</html>
