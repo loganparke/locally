@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Business, Review, User, Category } = require("../../models");
+const { User, Business, Review, Category } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
@@ -70,12 +70,16 @@ router.post("/login", (req, res) => {
       email: req.body.email,
     },
   }).then((dbUserData) => {
+    console.log(req.body.password);
     if (!dbUserData) {
       res.status(400).json({ message: "No user with that email address!" });
       return;
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
+    let validPassword = false;
+    if (req.body.password === dbUserData.password) {
+      validPassword = true;
+    }
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
@@ -83,7 +87,7 @@ router.post("/login", (req, res) => {
     }
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: "You are now logged in!" });
