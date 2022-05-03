@@ -1,52 +1,28 @@
 const router = require("express").Router();
 const { User, Business, Review, Category } = require("../../models");
 
-//Display businesses on homepage
-router.get('/', async (req, res) => {
-    try {
-        const dbBusinessData = await Business.findAll({
-              attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours']
-        });
-    
-        const businesses = dbBusinessData.map(business =>
-          business.get({ plain: true })
-        );
-        res.render('homepage', {
-          businesses,
-          loggedIn: req.session.loggedIn
-        });
-      } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+router.get("/:id", async(req,res) => {
+  Business.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Review
       }
-});
-
-//Display a single business when selected
-router.get('/:id', async (req, res) => {
-    try {
-        const dbBusinessData = await Business.findByPk(req.params.id, {
-
-              attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours'],
-              include: [
-                {
-                  model: Review,
-                  include: [
-                    {
-                      model: User
-                    }     
-                  ]
-                }
-              ]
-
-        });
-        const business = dbBusinessData.get({ plain: true });
-        const reviews = business.reviews;
-        console.log(reviews);
-        res.render('business', { business, reviews, loggedIn: req.session.loggedIn });
-      } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-      }
+    ]
+  })
+  .then(dbUserData => {
+    if (!dbUserData) {
+      res.status(404).json({ message: "No user found with this id" });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.post("/", async (req, res) => {

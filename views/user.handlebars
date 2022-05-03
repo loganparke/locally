@@ -1,8 +1,8 @@
 
 {{> header}}
 <div class="h-screen">
-<p class="text-center text-white p-7 text-4xl"><strong>{{ user.username }}'s</strong> Reviews</p>
-  <div class="flex justify-center">
+<p class="text-center p-7 text-4xl"><strong>{{ user.username }}'s</strong> Reviews</p>
+  <div class="flex flex-wrap justify-center">
   {{#each reviews }} 
     <div class="max-w-sm m-2 bg-white rounded overflow-hidden shadow-lg">
     <img class="w-full" src="{{business.mainPhoto}}">

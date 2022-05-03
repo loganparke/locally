@@ -1,29 +1,28 @@
-<header
-  id="header"
-  class="flex justify-center bg-black items-center flex-col px-5 align-middle bg-[url('https://p1.pxfuel.com/preview/817/496/947/restaurant-kitchen-menu-food-server.jpg')]"
->
-  {{! style="background-image: url('/public/img/restaurant-kitchen-menu-food-server.jpg'); }}
+  
+  <header id='header' class=" sm:w-screen flex justify-center bg-black items-center flex-col px-5 align-middle bg-[url('https://p1.pxfuel.com/preview/817/496/947/restaurant-kitchen-menu-food-server.jpg')]" >
 
     <nav class='my-6 flex justify-between w-full'>
       <div>
-        hi
+        .
       </div>
       <div>
+        {{#if loggedIn}}
         <button id="logout" class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">logout</button>
+        {{else}}
         <a href="/login" class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">login/sign up</a>
+        {{/if}}
       </div>
     </nav>
 
     <a href='/' id='main-header' class="text-9xl font-serif font-semibold text-white pt-5 pb-12">Locally</a>
 
-    <div class="category-list w-full flex justify-around font-medium text-white">
+    <div class=" sm:m-2 category-list w-full flex sm:justify-around sm:font-medium text-white">
       {{#each categories as |catagory|}}
-      <a href='/category/{{ id }}'id={{ id }} class=" uppercase w-52 m-5 p-2 text-center border border-4 rounded border-solid border-white hover:bg-white hover:text-black ">
+      <a href='/category/{{ id }}'id={{ id }} class="uppercase sm:w-52 sm:m-5 p-2 text-center border border-4 rounded border-solid border-white hover:bg-white hover:text-black ">
         {{ category_name }}
       </a>
       {{/each}}
     </div>
   </nav>
-  
 </header>
 <script src="/javascript/logout.js"></script>

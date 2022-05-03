@@ -19,7 +19,7 @@ async function addBusiness(event) {
   const address = document.querySelector('input[name="address"]').value;
   const photo = document.querySelector('input[name="photo"]').value;
 
-  const response = await fetch(`api/category` , {
+  const response = await fetch(`../api/businesses` , {
     method: 'POST',
     body: JSON.stringify({
       business_name: name,
@@ -43,4 +43,4 @@ async function addBusiness(event) {
 
 document.querySelector('#add').addEventListener('click', showModal);
 document.querySelector('#X').addEventListener('click', hideModal);
-document.querySelector('#submit').addEventListener('click', hideModal);
+document.querySelector('#submit').addEventListener('click', addBusiness);
