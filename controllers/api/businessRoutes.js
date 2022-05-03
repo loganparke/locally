@@ -5,18 +5,14 @@ const { User, Business, Review, Category } = require("../../models");
 router.get('/', async (req, res) => {
     try {
         const dbBusinessData = await Business.findAll({
-          include: [
-            {
-              model: Business,
+          
               attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours']
-            } 
-          ]
         });
     
         const businesses = dbBusinessData.map(business =>
           business.get({ plain: true })
         );
-        res.render('homepage', {
+        res.render('business', {
           businesses,
           loggedIn: req.session.loggedIn
         });
