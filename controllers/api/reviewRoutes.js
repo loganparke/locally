@@ -5,9 +5,9 @@ const { User, Business, Review, Catagory } = require("../../models");
 // Get all reviews
 router.get('/', async (req, res) => {
   try {
-    // find all library reviews and perform a JOIN to include all associated Readers
+    // find all reviews and perform a JOIN to include all associated User
     const reviewData = await Review.findAll({
-      include: [{ model: Reader }]
+      include: [{ model: User }]
     });
     res.status(200).json(reviewData);
   } catch (err) {
@@ -36,10 +36,10 @@ router.get('/:id', async (req, res) => {
 // Create a review
 router.post('/', async (req, res) => {
   try {
-    const businessData = await Review.create({
+    const reviewData = await Review.create({
       user_id: req.body.user_id
     });
-    res.status(200).json(businessData);
+    res.status(200).json(reviewData);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -50,12 +50,12 @@ router.delete('/:id', async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {
-        id: req.params.id
+        id: req.params.user_id
       }
     });
 
     if (!reviewData) {
-      res.status(404).json({ message: 'No review review found with that id!' });
+      res.status(404).json({ message: 'No review found with that id!' });
       return;
     }
 
