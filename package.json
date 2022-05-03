@@ -8,6 +8,9 @@
     "start": "node server.js",
     "seeds": "node seeds/index.js"
   },
+  "engines": {
+    "node": "16.14.2"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
