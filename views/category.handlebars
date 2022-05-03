@@ -6,7 +6,7 @@
 </div>
 <div class="mb-20 flex flex-wrap md:justify-center" id="wrapper">
 {{#each business}}
-  <a href="../api/businesses/{{id}}" id="b-box" class="relative w-96 h-96 rounded overflow-hidden m-5">
+  <a href="../business/{{id}}" id="b-box" class="shadow-xl relative w-96 h-96 rounded overflow-hidden m-5">
     <img src="{{mainPhoto}}" class="object-cover w-full h-full">
     <p id="b-name" class="absolute w-full bottom-0 inset-x-0 h-2/4 text-white font-bold text-4xl text-center leading-8">{{ business_name }}</p>
   </a>

@@ -1,18 +1,21 @@
 
 {{> header}}
 {{> business}}
-<div class="pb-10">
+<div class="pb-20">
   <div class="flex justify-between">
     <p class="text-white">.</p> 
     <p class="text-center underline text-xl">Reviews</p>
+    {{#if loggedIn}}
     <button id="add" class="mr-2 h-12 bg-transparent hover:bg-stone-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Add a Review</button>
+    {{else}}
+    <button id="review-login" class="mr-2 h-12 bg-transparent hover:bg-stone-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Login to add a review</button>
+    {{/if}}
   </div>
   {{#each reviews}}
   <div class="w-full flex flex-wrap border-b m-5 px-5">
     <h1 class="w-full">Review from <strong id="{{user.id}}">{{user.username}}</strong>:</h1>
     <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{stars}} Stars</p>
     <p class="text-black">{{review_text}}</p>
-    
   </div>
   {{/each}}
 </div>
@@ -44,5 +47,5 @@
     
   </div>
 </div>
-
 <script src="/javascript/addReview.js"></script>
+

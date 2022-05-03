@@ -1,5 +1,5 @@
 async function showModal(event) {
-  event.preventDefault();
+  //event.preventDefault();
   const modal = document.querySelector('#myModal');
   modal.classList.remove("hidden");
 }
@@ -24,7 +24,7 @@ async function addReview(event) {
     body: JSON.stringify({
       review_text: review_text,
       stars: stars,
-      user_id: 1,
+      //user_id: req.session.user_id,
       business_id: business_id.dataset.id
     }),
     headers: {
@@ -39,6 +39,26 @@ async function addReview(event) {
   }
 }
 
-document.querySelector('#add').addEventListener('click', showModal);
+function goToLogin () {
+  console.log('hello');
+  document.location.replace('/login')
+}
+
+document.body.addEventListener( 'click', function ( event ) {
+  if( event.target.id == 'add' ) {
+    showModal();
+    console.log('hi')
+  };
+});
+
+//document.querySelector('#add').addEventListener('click', showModal);
 document.querySelector('#X').addEventListener('click', hideModal);
 document.querySelector('#submitReview').addEventListener('click', addReview);
+
+document.body.addEventListener( 'click', function ( event ) {
+  if( event.target.id == 'review-login' ) {
+    goToLogin();
+  };
+} );
+
+//document.querySelector("#review-login").addEventListener("click", goToLogin);

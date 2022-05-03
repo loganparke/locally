@@ -3,7 +3,7 @@
 
     <nav class='my-6 flex justify-between w-full'>
       <div>
-        hi
+        .
       </div>
       <div>
         {{#if loggedIn}}
@@ -16,9 +16,9 @@
 
     <a href='/' id='main-header' class="text-9xl font-serif font-semibold text-white pt-5 pb-12">Locally</a>
 
-    <div class=" m-2 category-list w-full flex justify-around font-medium text-white">
+    <div class=" sm:m-2 category-list w-full flex sm:justify-around sm:font-medium text-white">
       {{#each categories as |catagory|}}
-      <a href='/category/{{ id }}'id={{ id }} class=" uppercase w-52 m-5 p-2 text-center border border-4 rounded border-solid border-white hover:bg-white hover:text-black ">
+      <a href='/category/{{ id }}'id={{ id }} class="uppercase sm:w-52 sm:m-5 p-2 text-center border border-4 rounded border-solid border-white hover:bg-white hover:text-black ">
         {{ category_name }}
       </a>
       {{/each}}
