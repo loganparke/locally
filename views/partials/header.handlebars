@@ -1,6 +1,8 @@
-  
-  <header id='header' class="flex justify-center bg-black items-center flex-col px-5 align-middle bg-[url('https://p1.pxfuel.com/preview/817/496/947/restaurant-kitchen-menu-food-server.jpg')]"  >
-    {{!-- style="background-image: url('/public/img/restaurant-kitchen-menu-food-server.jpg'); --}}
+<header
+  id="header"
+  class="flex justify-center bg-black items-center flex-col px-5 align-middle bg-[url('https://p1.pxfuel.com/preview/817/496/947/restaurant-kitchen-menu-food-server.jpg')]"
+>
+  {{! style="background-image: url('/public/img/restaurant-kitchen-menu-food-server.jpg'); }}
 
     <nav class='my-6 flex justify-between w-full'>
       <div>
@@ -12,7 +14,7 @@
       </div>
     </nav>
 
-    <a href='/' id='main-header' class="text-7xl font-semibold text-white pt-5 pb-12">Locally</a>
+    <a href='/' id='main-header' class="text-9xl font-serif font-semibold text-white pt-5 pb-12">Locally</a>
 
     <div class="category-list w-full flex justify-around font-medium text-white">
       {{#each categories as |catagory|}}
@@ -21,5 +23,7 @@
       </a>
       {{/each}}
     </div>
-
-  </header>
+  </nav>
+  
+</header>
+<script src="/javascript/logout.js"></script>

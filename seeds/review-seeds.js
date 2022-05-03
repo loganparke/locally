@@ -19,6 +19,12 @@ const reviewData = [
     stars: 1,
     user_id: 1,
     business_id: 1
+  },
+  {
+    review_text: 'I changed my mind its ok',
+    stars: 3,
+    user_id: 1,
+    business_id: 1
   }
 ];
 

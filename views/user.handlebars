@@ -1,6 +1,21 @@
 
 {{> header}}
-
-<p>user <strong>{{ user.username }}'s</strong> page</p>
-<p> {{ user.email }}</p>
-<p> {{ user.reviews }}</p>
+<div class="h-screen">
+<p class="text-center text-white p-7 text-4xl"><strong>{{ user.username }}'s</strong> Reviews</p>
+  <div class="flex justify-center">
+  {{#each reviews }} 
+    <div class="max-w-sm m-2 bg-white rounded overflow-hidden shadow-lg">
+    <img class="w-full" src="{{business.mainPhoto}}">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl text-black mb-2">{{business.business_name}}</div>
+      <p class="text-gray-700 text-base">
+        {{review_text}}
+      </p>
+    </div>
+    <div class="px-6 pt-4 pb-2">
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{stars}} Star Rating</span>
+    </div>
+  </div>
+  {{/each}}
+  </div>
+</div>

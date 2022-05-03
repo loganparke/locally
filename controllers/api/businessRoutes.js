@@ -5,7 +5,6 @@ const { User, Business, Review, Category } = require("../../models");
 router.get('/', async (req, res) => {
     try {
         const dbBusinessData = await Business.findAll({
-          
               attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours']
         });
     
@@ -23,19 +22,27 @@ router.get('/', async (req, res) => {
 });
 
 //Display a single business when selected
-router.get('/business/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const dbBusinessData = await Business.findByPk(req.params.id, {
-          include: [
-            {
-              model: Business,
-              attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours']
-            }
-          ]
+
+              attributes: ['id','business_name','category_id','website','phone','address','mainPhoto','hours'],
+              include: [
+                {
+                  model: Review,
+                  include: [
+                    {
+                      model: User
+                    }     
+                  ]
+                }
+              ]
+
         });
-    
         const business = dbBusinessData.get({ plain: true });
-        res.render('business', { business, loggedIn: req.session.loggedIn });
+        const reviews = business.reviews;
+        console.log(reviews);
+        res.render('business', { business, reviews, loggedIn: req.session.loggedIn });
       } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -45,6 +52,11 @@ router.get('/business/:id', async (req, res) => {
 router.post("/", async (req, res) => {
     Business.create({
       business_name: req.body.business_name,
+      category_id: req.body.category_id,
+      website: req.body.website,
+      phone: req.body.phone,
+      address: req.body.address,
+      mainPhoto: req.body.mainPhoto,
     })
       .then((dbBusinessData) => res.json(dbBusinessData))
     .catch((err) => {
