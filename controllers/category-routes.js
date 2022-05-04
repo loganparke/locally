@@ -15,7 +15,7 @@ router.get('/:id', (req, res) => {
   .then(dbCategoryData => {
     const categories = dbCategoryData.get({ plain: true })
     const business = categories.businesses;
-    console.log(business);
+
       if (!dbCategoryData) {
         res.status(404).json({ message: "No categories found" });
         return;

@@ -14,20 +14,20 @@
     <link rel="stylesheet" href="/style/style.css" />
   </head>
 
-  <body>
-    <div class="wrapper h-screen font-mono">
+<body>
+  <div class="wrapper h-full font-mono w-full">
 
       {{{body}}}
 
       <footer
-        class="fixed py-1 mt-10 bottom-0 w-full text-white bg-black text-center"
+        class="fixed py-1 mt-10 bottom-0 w-full text-white bg-black text-center z-50"
       >
         Thanks for visiting! - this website is brought to you by Luke Sturgill,
         Logan Parke, and Nancy Wang
       </footer>
     </div>
     {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
+      <script src="/javascript/logout.js">  </script>
     {{/if}}
   </body>
 </html>

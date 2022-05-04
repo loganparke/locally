@@ -1,12 +1,13 @@
 
 {{> header}}
-<div class="w-full flex justify-between">
-  <div id="category" data-id="{{categories.id}}" class="text-6xl capitalize pl-9 m-7 w-4/6">{{ categories.category_name }}s</div>
-  <button id='add' class="m-6 h-16 bg-transparent hover:bg-stone-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded"> Add a {{ categories.category_name }}</button>
+{{#if categories}}
+<div class="w-full flex sm:justify-between sm:flex-row flex-col items-center">
+  <div id="category" data-id="{{categories.id}}" class="sm:text-6xl text-3xl text-center mt-3 capitalize sm:px-4 sm:w-2/6 w-10/12">{{ categories.category_name }}</div>
+    <button id='add' class="m-6 h-16 bg-transparent hover:bg-stone-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded md:w-2/6 w-10/12"> Add a {{ categories.category_name }}</button>
 </div>
-<div class="mb-8 flex flex-wrap justify-center" id="wrapper">
+<div class="mb-20 flex flex-wrap md:justify-center" id="wrapper">
 {{#each business}}
-  <a href="../api/businesses/{{id}}" id="b-box" class="relative w-96 h-96 rounded overflow-hidden m-5">
+  <a href="../business/{{id}}" id="b-box" class="shadow-xl relative w-96 h-96 rounded overflow-hidden m-5">
     <img src="{{mainPhoto}}" class="object-cover w-full h-full">
     <p id="b-name" class="absolute w-full bottom-0 inset-x-0 h-2/4 text-white font-bold text-4xl text-center leading-8">{{ business_name }}</p>
   </a>
@@ -45,6 +46,6 @@
     
   </div>
 </div>
-
+{{/if}}
 
 <script src="/javascript/category.js"></script>

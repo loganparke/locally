@@ -39,6 +39,24 @@ const businessData = [
     },
   },
   {
+    business_name: "Rodizio Grill Brazilian Steakhouse",
+    category_id: 1,
+    website: "thecheesecakefactory.com",
+    phone: "(801) 220-0500",
+    address: "65 Regent St, Salt Lake City, UT 84111",
+    mainPhoto:
+      "https://hosted.where2getit.com/cheesecake/images/2021/ck157.CCF--City-Creek-Dining-Overhead-Daytime--lo-res.jpg",
+    hours: {
+      monday: "9AM-5PM",
+      tuesday: "9AM-5PM",
+      wednesday: "9AM-5PM",
+      thursday: "9AM-5PM",
+      friday: "9AM-5PM",
+      saturday: "9AM-5PM",
+      sunday: "closed",
+    },
+  },
+  {
     business_name: "SLC Scapes",
     category_id: 3,
     website: "http://www.slcscapes.com",
