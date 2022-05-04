@@ -12,9 +12,16 @@ router.get("/", (req, res) => {
         res.status(404).json({ message: "No categories found" });
         return;
       }
+      if(req.session.loggedIn) {
       res.render("homepage", {
         categories,
+        loggedIn: req.session.loggedIn
       });
+      } else {
+        res.render("homepage", {
+          categories,
+        });
+      }
     })
     .catch((err) => {
       console.log(err);

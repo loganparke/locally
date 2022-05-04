@@ -20,10 +20,19 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: "No categories found" });
         return;
       }
-      res.render('category', {
-        categories,
-        business
-      });
+      if(req.session.loggedIn) {
+        res.render('category', {
+          categories,
+          business,
+          loggedIn: req.session.loggedIn
+        });
+      } else {
+        res.render('category', {
+          categories,
+          business
+        });
+      }
+
   })
   .catch(err => {
     console.log(err);
